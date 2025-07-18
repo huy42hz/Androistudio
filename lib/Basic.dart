@@ -15,9 +15,46 @@ class Basic extends StatelessWidget {
         centerTitle: true,
       ),
       backgroundColor: Colors.deepPurple[100],
-      body: Center(
-       child: Text("this is body",style: TextStyle(fontSize: 20),),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Center(
+          child: Card(
+            elevation: 8,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const CircleAvatar(
+                    radius: 50,
+                    backgroundImage: AssetImage("assets/images/Screenshot 2025-04-12 152248.png"),
+                  ),
+                  const SizedBox(height: 16),
+                  const Text(
+                    "Huy Hoàng",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    "Sinh viên CNTT - K46",
+                    style: TextStyle(fontSize: 16, color: Colors.grey),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 16),
+                  ElevatedButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.email),
+                    label: const Text("Liên hệ",style: TextStyle(),),
+
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
       ),
+
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -26,9 +63,7 @@ class Basic extends StatelessWidget {
               accountName: Text("Huy Hoàng"),
               accountEmail: Text("huyhoang@example.com"),
               currentAccountPicture: CircleAvatar(
-                backgroundImage: NetworkImage(
-                  "https://i.pravatar.cc/300",
-                ),
+                backgroundImage: AssetImage("assets/images/Screenshot 2025-04-12 152248.png")
               ),
               decoration: BoxDecoration(
                 color: Colors.deepPurple,
